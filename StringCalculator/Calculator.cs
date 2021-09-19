@@ -59,17 +59,22 @@ namespace StringCalculator
 
         bool CheckForNegatives(List<int> numbers)
         {
-            bool hasNegatives = false;
+            List<int> negatives = new List<int>();
 
             foreach(int i in numbers)
             {
                 if (i < 0)
                 {
-                    hasNegatives = true;
+                    negatives.Add(i);
                 }
             }
 
-            return hasNegatives;
+            if(negatives.Count > 0)
+            {
+                throw new InvalidOperationException("Negatives not allowed. You passed: " + String.Join(", ", negatives));
+            }
+
+            return false;
         }
     }
 }

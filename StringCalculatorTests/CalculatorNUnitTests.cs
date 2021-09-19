@@ -55,7 +55,7 @@ namespace StringCalculator
         {
             var result = Assert.Throws<InvalidOperationException>(() => calculator.Calculate("5,-2"));
 
-            Assert.That(result.Message, Is.EqualTo("negatives not allowed"));
+            Assert.That(result.Message, Is.EqualTo("Negatives not allowed. You passed: -2"));
         }
 
         [Test]
